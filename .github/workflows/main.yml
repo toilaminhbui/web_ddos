@@ -11,9 +11,9 @@ jobs:
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
       with:
-        host: 103.170.121.211
+        host: 157.10.203.82
         username: root
-        password: 8bO3H&8D^h
+        password: mO4X$Dl00*
         port: 22
         script: |
           cd web_ddos
