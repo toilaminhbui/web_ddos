@@ -1,0 +1,24 @@
+name: Expressjs Deployment
+
+on:
+  push:
+    branches: [production]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: 103.170.121.211
+        username: root
+        password: 8bO3H&8D^h
+        port: 22
+        script: |
+          cd web_ddos
+          git fetch origin
+          git checkout production
+          git pull
+          npm install
+          pm2 reload express-demo
