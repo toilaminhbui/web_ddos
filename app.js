@@ -68,7 +68,7 @@ app.use((req, res, next) => {
 });
 
 
-app.get('/',(req, res) => {
+app.get('/',speedLimiter,limiter,(req, res) => {
     res.render('home');
 });
 
