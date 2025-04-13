@@ -80,7 +80,7 @@ app.use((req, res, next) => {
   });
 
 // Routes
-app.get('/',speedLimiter,(req, res) => {
+app.get('/',speedLimiter,limiter,(req, res) => {
     res.render('home');
 });
 
