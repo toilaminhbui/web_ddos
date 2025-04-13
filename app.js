@@ -7,6 +7,8 @@ const slowDown = require('express-slow-down');
 
 const app = express();
 
+app.set('trust proxy', true);
+
 // LÀM DELAY KHI VƯỢT QUÁ 30 REQUEST/PHÚT
 const speedLimiter = slowDown({
     windowMs: 1 * 60 * 1000,
@@ -14,7 +16,7 @@ const speedLimiter = slowDown({
     delayMs: (hits) => hits * 100,
 });
 
-// GIỚI HẠN 60 REQUEST/PHÚT
+// GIỚI HẠN KHI ĐẠT 60 REQUEST/PHÚT
 const limiter = rateLimit({
     windowMs: 1 * 60 * 1000,
     max: 60, 
@@ -37,7 +39,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.json({ limit: '10kb' })); 
+// Giới hạn kích thước dữ liệu JSON nhận vào từ client. 
+app.use(express.json({ limit: '10kb' }));
+
+// Giới hạn kích thước dữ liệu form-urlencoded nhận vào từ client.
 app.use(express.urlencoded({ limit: '5kb' })); 
 
 // KIỂM TRA BOT DETECTION
