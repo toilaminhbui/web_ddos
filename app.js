@@ -7,7 +7,7 @@ const slowDown = require('express-slow-down');
 
 const app = express();
 
-app.set('trust proxy', true);
+app.set('trust proxy', 1);
 
 // LÀM DELAY KHI VƯỢT QUÁ 30 REQUEST/PHÚT
 const speedLimiter = slowDown({
