@@ -21,4 +21,4 @@ jobs:
           git checkout production
           git pull
           npm install
-          pm2 reload express-demo
+          pm2 reload web_ddos
