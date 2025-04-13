@@ -90,19 +90,19 @@ app.get('/shop',speedLimiter,limiter, (req, res) => {
     res.render('shop');
 });
 
-app.get('/shop-detail',limiter, (req, res) => {
+app.get('/shop-detail',speedLimiter,limiter, (req, res) => {
     res.render('shop-detail');
 });
 
-app.get('/cart',limiter, (req, res) => {
+app.get('/cart',speedLimiter,limiter, (req, res) => {
     res.render('cart');
 });
 
-app.get('/testimonial',limiter, (req, res) => {
+app.get('/testimonial',speedLimiter,limiter, (req, res) => {
     res.render('testimonial');
 });
 
-app.get('/contact',limiter, (req, res) => {
+app.get('/contact',speedLimiter,limiter, (req, res) => {
     res.render('contact');
 });
 
