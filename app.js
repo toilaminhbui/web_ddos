@@ -12,14 +12,14 @@ app.set('trust proxy', 1);
 // LÀM DELAY KHI VƯỢT QUÁ 30 REQUEST/PHÚT
 const speedLimiter = slowDown({
     windowMs: 1 * 60 * 1000,
-    delayAfter: 30,
+    delayAfter: 15,
     delayMs: (hits) => hits * 100,
 });
 
 // GIỚI HẠN KHI ĐẠT 60 REQUEST/PHÚT
 const limiter = rateLimit({
     windowMs: 1 * 60 * 1000,
-    max: 60, 
+    max: 30, 
     message: 'Quá nhiều yêu cầu từ IP này, vui lòng thử lại sau 1 phút',
     standardHeaders: true,
     legacyHeaders: false,
