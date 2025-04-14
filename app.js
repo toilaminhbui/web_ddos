@@ -69,59 +69,59 @@ app.use((req, res, next) => {
 
 // CHUA DUNG MIDDLEWARE
 
-// app.get('/',(req, res) => {
-//     res.render('home');
-// });
-
-// app.get('/shop',(req, res) => {
-//     console.log("hello");
-    
-//     res.render('shop');
-// });
-
-// app.get('/shop-detail', (req, res) => {
-//     res.render('shop-detail');
-// });
-
-// app.get('/cart', (req, res) => {
-//     res.render('cart');
-// });
-
-// app.get('/testimonial', (req, res) => {
-//     res.render('testimonial');
-// });
-
-// app.get('/contact', (req, res) => {
-//     res.render('contact');
-// });
-
-
-// DUNG MIDDLEWARE
-app.get('/',speedLimiter,limiter,(req, res) => {
+app.get('/',(req, res) => {
     res.render('home');
 });
 
-app.get('/shop',speedLimiter,limiter, (req, res) => {
+app.get('/shop',(req, res) => {
     console.log("hello");
     
     res.render('shop');
 });
 
-app.get('/shop-detail',speedLimiter,limiter, (req, res) => {
+app.get('/shop-detail', (req, res) => {
     res.render('shop-detail');
 });
 
-app.get('/cart',speedLimiter,limiter, (req, res) => {
+app.get('/cart', (req, res) => {
     res.render('cart');
 });
 
-app.get('/testimonial',speedLimiter,limiter, (req, res) => {
+app.get('/testimonial', (req, res) => {
     res.render('testimonial');
 });
 
-app.get('/contact',speedLimiter,limiter, (req, res) => {
+app.get('/contact', (req, res) => {
     res.render('contact');
 });
+
+
+// DUNG MIDDLEWARE
+// app.get('/',speedLimiter,limiter,(req, res) => {
+//     res.render('home');
+// });
+
+// app.get('/shop',speedLimiter,limiter, (req, res) => {
+//     console.log("hello");
+    
+//     res.render('shop');
+// });
+
+// app.get('/shop-detail',speedLimiter,limiter, (req, res) => {
+//     res.render('shop-detail');
+// });
+
+// app.get('/cart',speedLimiter,limiter, (req, res) => {
+//     res.render('cart');
+// });
+
+// app.get('/testimonial',speedLimiter,limiter, (req, res) => {
+//     res.render('testimonial');
+// });
+
+// app.get('/contact',speedLimiter,limiter, (req, res) => {
+//     res.render('contact');
+// });
 
 
 //
